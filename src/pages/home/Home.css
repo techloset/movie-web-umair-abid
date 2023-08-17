@@ -1,0 +1,52 @@
+/* Add this CSS to your stylesheets or components */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-header {
+  position: relative;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+}
+
+.movie-details {
+  padding: 15px;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.movie-overview {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.movie-popularity,
+.movie-release,
+.movie-language {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 5px 0;
+}
+.span {
+  font-size: medium;
+  font-weight: 700;
+  color: #888;
+}
