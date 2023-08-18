@@ -59,11 +59,13 @@ function SearchBar() {
                             </div>
                         </Link>
                         <div className="movie-details">
-                            <h2 className="movie-title">{data.title}</h2>
-
-                            <p className="movie-popularity"> <span className='span'>Id: </span> {data.id}</p>
-
-                        </div>
+                        <h2 className="movie-title">{data.title}</h2>
+                     
+                        <p className="movie-popularity"> <span className='span'>Id: </span> {data.id}</p>
+                        <p className="movie-popularity"> <span className='span'>Popularity: </span> {data.popularity}</p>
+                        <p className="movie-release"><span className='span'> Release Date: </span>{data.release_date}</p>
+                
+                    </div>
                     </div>
                 ))}
 
