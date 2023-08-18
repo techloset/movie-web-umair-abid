@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [showResults, setShowResults] = useState([]);
- 
- 
-  
+
+
+
 
 
     useEffect(() => {
@@ -39,11 +39,11 @@ const Home = () => {
                     </Link>
                     <div className="movie-details">
                         <h2 className="movie-title">{data.title}</h2>
-                     
+
                         <p className="movie-popularity"> <span className='span'>Id: </span> {data.id}</p>
                         <p className="movie-popularity"> <span className='span'>Popularity: </span> {data.popularity}</p>
                         <p className="movie-release"><span className='span'> Release Date: </span>{data.release_date}</p>
-                
+
                     </div>
                 </div>
             ))}

@@ -9,8 +9,9 @@ import TopRating from "./pages/topRating/TopRating";
 import Detail from "./pages/detail/Detail";
 
 import {
-  BrowserRouter, Routes, Route, 
+  BrowserRouter, Routes, Route,
 } from "react-router-dom";
+
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/top-rated" element={<TopRating />} />
         <Route path="/search" element={<SearchBar />} />
         <Route path="/detail/:id" element={<Detail />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -5,6 +5,8 @@ import './Detail.css'
 const Detail = () => {
     const params = useParams()
     const { id } = params
+
+    const [content, setContent] = useState('');
     const [showResults, setShowResults] = useState({
         original_title: '', poster_path: '', homepage: '', release_date: '', revenue: Number,
 
@@ -17,6 +19,7 @@ const Detail = () => {
         const movie_id = id
 
         const apiUrl = `  https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}`;
+        const reviewApi = `https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=${apiKey}`;
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -32,8 +35,24 @@ const Detail = () => {
                 });
 
             })
+        fetch(reviewApi)
+            .then(response => response.json())
+            .then(data => {
+                if (data.results.length > 0) {
+                    const fullContent = data.results[0].content;
+                    const truncatedContent = truncateContent(fullContent, 100);
+                    setContent(truncatedContent);
+                }
+            });
 
     }, [id])
+    const truncateContent = (content, maxLength) => {
+        const words = content.split(' ');
+        if (words.length > maxLength) {
+            return words.slice(0, maxLength).join(' ');
+        }
+        return content;
+    };
     return (
         <div className="movie-detail-container">
             <div className="movie-detail">
@@ -86,7 +105,10 @@ const Detail = () => {
                                 </div>
                             )}
                         </div>
-
+                        <div>
+                            <h3>Reviews: </h3>
+                            <p className='text-[#888]'>{content}</p>
+                        </div>
 
                     </div>
                 </div>
